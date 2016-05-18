@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ * Zurb Foundation 6 grid plugin for views.
+ */
+
+/**
+ * Implements hook_autoload_info.
+ */
+function views_z6_autoload_info() {
+  return array(
+    'views_plugin_style_views_z6' => 'views_plugin_style_views_z6.inc',
+  );
+}
+
+/**
+ * Implements hook_views_api()
+ */
+function views_z6_views_api() {
+  return array(
+    'api' => '3.0',
+    'path' => backdrop_get_path('module', 'views_z6'),
+    'template_path' => backdrop_get_path('module', 'views_z6'),
+  );
+}
+
+/**
+ * Preprocess function for views_view_salvattore.tpl.php.
+ */
+function template_preprocess_views_view_views_z6(&$vars) {
+  // Run preprocess function for unformatted style
+  template_preprocess_views_view_unformatted($vars);
+  // Get view options
+  $view = $vars['view'];
+  $options = $vars['options'];
+}

@@ -1,0 +1,7 @@
+name = Views Z6
+description = Views Z6
+backdrop = 1.x
+version = 1.x-1.0.0
+type = module
+package = Views
+dependencies[] = views
